@@ -1,0 +1,383 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  </script>
+  <title>
+    Dashboard
+  </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,100&display=swap');
+    p {
+  font-family: "Poppins", sans-serif;
+
+  font-style: normal;
+}
+    </style>
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+  ></script>
+
+
+</head>
+
+<body x-data="{ showModal: false }" @keydown.escape.window="showModal = false" class="flex flex-col min-h-screen">
+
+
+ <!--navbar-->
+ <div class="w-full sticky top-0 bg-white z-[99999999]">
+
+    <div class="bg-[#1a3a05] text-white text-xs font-semibold flex justify-end py-2 sm:pl-4 px-[11.4rem]">
+      <a class="hover:underline" href="#">Buku terbaru</a>
+      <a class="hover:underline ml-9" href="#">Hubungi kami</a>
+    </div>
+
+    <header class="flex items-center  py-2 px-[10.5rem]">
+      <!-- Kiri: Logo + Kategori -->
+      <div class="flex items-center gap-[9.9rem] flex-shrink-0 mr-[0.8rem]">
+        
+        <div class="w-12 h-12 sm:w-24 sm:h-16">
+          <img  
+           class="w-4 h-4 sm:w-24 sm:h-12  borde-black"
+          src="image/Logo Auriga.png"/>
+
+        </div>
+
+
+        <label
+          class="font-bold text-sm hidden sm:block cursor-pointer"
+          @click.prevent="showModal = !showModal">
+          Kategori
+        </label>
+      </div>
+
+      <!-- Kanan: Input + User Info -->
+      <div class="flex items-center justify-between w-full relative">
+        <!-- Input -->
+        <input
+          id="kategori"
+          type="text"
+          placeholder="Cari kategori..."
+          aria-label="Kategori"
+          class="border border-black text-sm py-1 px-2 w-full mr-36 max-w-full sm:max-w-none" />
+
+        <!-- User Info -->
+        <div
+          x-data="{ dropdownOpen: false }"
+          class="relative flex items-center space-x-2 sm:space-x-3 flex-shrink-0 cursor-pointer select-none"
+          @click="dropdownOpen = !dropdownOpen"
+          @click.away="dropdownOpen = false">
+          <!-- Avatar -->
+          <img
+            alt="User avatar"
+            class="w-4 h-4 sm:w-9 sm:h-9 rounded-full border borde-black"
+            src="image/pp.jpeg" />
+
+          <p class="font-bold text-sm sm:flex pr-3">
+            Hi, <span>Pengguna</span>
+          </p>
+
+          <!-- Panah hanya untuk mobile -->
+          <p class="font-bold text-sm sm:hidden">v</p>
+
+          <!-- Dropdown -->
+          <div
+            x-show="dropdownOpen"
+            @click.away="dropdownOpen = false"
+            class="absolute right-0 top-full mt-2 w-36 bg-white border border-gray-300 z-50 shadow-md">
+            <a href="{{ route('user.dashboard') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">Home</a>
+
+            <a href="{{ route('user.buku.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">Buku</a>
+
+            <a href="{{ route('user.peminjaman.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">peminjaman</a>
+            <a href="aset" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">Aset</a>
+            <form id="logout-form" action="{{ route('user.logout') }}" method="POST" class="hidden">
+    
+</form>
+
+<a href="#" 
+   class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700"
+   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+   Logout
+</a>
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- Navigation -->
+    <div class="flex justify-center">
+      <header
+
+        class="flex hidden sm:flex justify-center -translate-y-6">
+        <nav class="flex justify-center gap-[1.6rem] text-[13px] text-black w-full">
+          <a class="hover:underline" href="#">Hutan</a>
+          <a class="hover:underline" href="#">Kebun</a>
+          <a class="hover:underline" href="#">Tambang dan Energi</a>
+          <a class="hover:underline" href="#">Hukum</a>
+          <a class="hover:underline" href="#">Novel</a>
+          <a class="hover:underline" href="#">Lainnya</a>
+        </nav>
+      </header>
+    </div>
+
+    <div class="border-b border-red-500 -mt-3"></div>
+  </div>
+
+  <!-- Modal -->
+  <div
+    x-show="showModal"
+    x-transition
+    x-cloak
+    @click.self="showModal = false"
+    class="fixed inset-0  z-[100000] pl-119 mt-2 pr-36 flex items-start justify-start pt-21">
+    <div class="bg-white border border-gray-300 shadow-lg w-full max-w-7xl py-8 px-8 mx-4">
+      <div class="flex flex-col space-y-8 mb-24">
+        <div>
+          <p class="font-bold text-sm leading-tight mb-2">Hukum</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+        </div>
+        <div>
+          <p class="font-bold text-sm leading-tight mb-2">Hutan</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+        </div>
+        <div>
+          <p class="font-bold text-sm leading-tight mb-2">Kebun</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+        </div>
+        <div>
+          <p class="font-bold text-sm leading-tight mb-2">Tambang dan Energi</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+        </div>
+        <div>
+          <p class="font-bold text-sm leading-tight mb-2">Novel</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+        </div>
+        <div>
+          <p class="font-bold text-sm leading-tight mb-2">Lainnya</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--content-->
+<div>
+    <div class="bg-white" x-data="{ showTerms: false, agreed: false }" @close-modal.window="showTerms = false">
+
+        <div class="flex flex-col items-start px-[11.4rem] py-4 mt-10 poppins-regular">
+            <div class="w-full">
+                <p class="font-bold text-xs mb-1">
+                    Hutan
+                </p>
+
+            </div>
+
+            <div class="flex flex-col lg:flex-row space-x-2 w-full">
+                <!-- Book Cover -->
+                <div class="w-72 h-97 border border-gray-700 bg-white flex px-3">
+                    @if($buku && $buku->foto_buku)
+                    <div class="flex">
+                        <img src="{{ $buku->foto_buku ?? asset('images/placeholder.png') }}"
+                            alt="{{ $buku->nama_buku }} cover image" class="max-w-full max-h-full object-contain" />
+                    </div>
+                    @else
+                    <div class="w-full h-full bg-gray-30"></div>
+                    @endif
+                </div>
+
+
+                <div class="flex flex-col justify-between w-full -mt-1 pl-10 pr-2 ">
+                    <div>
+                        <p class="font-bold text-md pr-102">
+                            Biologi Hutan: Morfologi Tumbuhan 
+                        </p>
+                        <p class="text-xs mr-70">
+                            Buku Biologi Hutan: Morfologi Tumbuhan mengupas tentang struktur luar tumbuhan yang terdiri dari organ vegetatif dan organ reproduktif. Organ vegetatif mencakup akar, batang, dan daun, yang masing-masing memiliki fungsi vital dalam proses fotosintesis, penyerapan air, serta pertumbuhan tanaman. Sementara itu, organ reproduktif seperti bunga, buah, dan biji berperan dalam perkembangbiakan tumbuhan. Buku ini juga mengajarkan cara mengenali dan mendeskripsikan morfologi tumbuhan secara sistematis, termasuk pencandraan serta penyusunan rumus dan diagram bunga, yang sangat berguna dalam studi botani dan kehutanan.
+                        </p>
+                        <br>
+                        <p class="text-xs mr-70">
+                            Buku Biologi Hutan: Morfologi Tumbuhan mengupas tentang struktur luar tumbuhan yang terdiri dari organ vegetatif dan organ reproduktif. Organ vegetatif mencakup akar, batang, dan daun, yang masing-masing memiliki fungsi vital dalam proses fotosintesis, penyerapan air, serta pertumbuhan tanaman. Sementara itu, organ reproduktif seperti bunga, buah, dan biji berperan dalam perkembangbiakan tumbuhan. Buku ini juga mengajarkan cara mengenali dan mendeskripsikan morfologi tumbuhan secara sistematis, termasuk pencandraan serta penyusunan rumus dan diagram bunga, yang sangat berguna dalam studi botani dan kehutanan.
+                        </p>
+                    </div>
+
+                    <button class="bg-gray-300 font-bold text-sm px-[0.6rem] py-[0.4rem] w-max"
+                        @click="showTerms = true"
+                        type="button">Pinjam
+                    </button>
+                </div>
+            </div>
+
+            <div class="w-full pl-43 mt-9">
+                <p class="font-bold text-xs">
+                    Buku Lainnya
+                </p>
+                <div class="flex gap-[2.42rem] overflow-x-auto">
+                    @foreach($otherBooks as $otherBook)
+                    <div class="border border-gray-400 p-[0.7rem] w-33">
+                        <img alt="Book cover" class="w-32 h-[7.1rem] object-cover" src="https://placehold.co/144x144/cccccc/cccccc" />
+                        <p class="font-bold text-[9px] leading-tight line-clamp-2 mt-3 min-h-[1.3rem]">{{ $otherBook-> nama_buku }}</p>
+                        <p class="text-[8px] leading-tight mb-1 mt-3 ">{{ Str::limit($otherBook->ringkasan, 30) }}</p>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div x-show="showTerms" class="fixed inset-0 flex items-center justify-center  pl-88 pr-[21.9rem] mt-50" x-cloak>
+                <div class="bg-white border px-9 py-6 w-full max-h-[90vh] overflow-y-auto  relative"
+                    @click.away="showTerms = false">
+                    <h3 class="font-semibold text-md mb-4">Syarat Ketentuan</h3>
+
+                    <p class="text-xs leading-tight mb-3">
+                        Tambang dan EnergiMusae molest qui beatur atiuntibus aut versper essinci coremo consed quates et aut perume si cusam sant essimus aut alis
+                        que comnis ab ipsapeles mint doluptibus moluptate qui doluptu rehendae plaute sameni alit pre cusdantion consequame que nihit ant.
+                        Mus, idelendus, coriantis mostior aut autaquis dolut pratem quas reiuribus et ped millaut ut exces nullent reperna temporent minihici ommos
+                        moloris millabor aut vent fugia delectus, invent iumendi tibusaperum nis doloreh enimagn ihicil ius ipsa non pro qui abo. Nam ium aci nuscit
+                        doluptionse doluptas que si dit quo ent, is evellupis suntur, que nihicil iberemo lupturi tatibus.
+                        Quis cora volorpossum quatio molorep ratur?
+                    </p>
+                    <p class="text-[11.8px] leading-tight mb-3">
+                        Igendit ut quiament, sum si ipis debit eius aut liquissi blatem dolest estia quis ad que atiuntias res endeles dis aut ommolup taquiae dolorerovita cor samet volutas ex eum haris nonsequce occatem. Ur? Apeliqui apitem natiam, tetur sit hit et aliciam, tore magnihii liaspicium el il inum etur? Erio beate nia quistrum nes minvent pre, quis moluptate doluptatquia vent. Udae peror sundis volorita nis most ut verum id et odioritin et, ut evel magniment optae nes etur?
+                    </p>
+                    <p class="text-[11.8px] leading-tight mb-3">
+                        Ullescia debis rem. Nam, voluptatquam que vidit fugit alitin nos eturero omnimaximus ipsae lisimin ctesistiat dolut in cuscia dolutati iorecerios si bero qui doluptiuntem re suntisi magnis sit resendit oditeces dolum quas doloreporem fugitae. Untur, cum aut aut eationet officia spitiora doluptur assed quo odis ipictiatem que por am aut maio. Andam sitatur remporest qui blabo. Enimporem. Lenis et del ipsanihil mod unt quatas doluptates venis sequam repro bea voluptatant aut etuscit harum et optur sam sum elenissit etur audit, quias venditatur ad ullabo. Itat esti officiument expe estor modi omniniil lanimi, sequis qui te excerspid quae pe mosandae.
+                    </p>
+                    <p class="text-[11.8px] leading-tight mb-4">
+                        Et repelli taquid mil ipidess itamus erchilicto conminaio. Tes ea si ipsunt latatus sa voluptaeris mi, et optur, ut officiet magnist rumque ditibus et odi nietur sequidi odignissum volectur re ped es dolla ditatus escium arum re quam, ide quo comniscit pa que nisquis quis ex esequat atatate mporeprem fugitae. Et re rsperro maximus cidunt, tem fuga. Et aut pa que non et offic te reperio. Hillore, que exerore rferum eum eos sectibust fugitiaest dolorpo reprae vendita tiundus dolorrum lique vellige ndistoria volorem elest parum ipsanditam nem fuga. Et ex eum quate nem fuga. Nem fugiaes mi, quaecep eraectur aliquuntiae conem imus et maximus dandunti odipiet everrum doluptur riamet essitat occaborest, occulpa pro ium id mintio. Borrum laborro iniminc ipienti sincti doluptas essimpedis eum hilibea dolorepta quossit inveror maioria ssedipicae quationseque nus evel eium sit es porero di vellaut dellupt atectis vel maioratur?
+                    </p>
+
+                    <!-- Checkbox and button -->
+                    <div class="flex items-center mb-14">
+                        <input type="checkbox" class="form-checkbox w-5 h-5 text-black border-gray-400"
+                            x-model="agreed" />
+                        <span class="ml-2 text-sm font-bold select-none">Setuju</span>
+
+
+                    </div>
+
+                    <!-- Button -->
+                    <div class="flex mb-4">
+                        <button
+                            type="button"
+                            wire:click="pinjamBuku"
+                            wire:loading.attr="disabled"
+                            :disabled="!agreed"
+                            class="font-bold text-sm px-2 py-1 transition"
+                            :class="agreed 
+        ? 'bg-gray-300 hover:bg-gray-400 cursor-pointer' 
+        : 'bg-gray-500 text-white cursor-not-allowed'">
+                            Pinjam
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+          
+<!--footer-->
+<footer class="border-t border-red-600 mt-auto bg-white poppins-regular">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center sm:px-49 py-[2.6rem] pb-12">
+      <div class="mt-0 sm:-mt-16 flex justify-center w-full sm:w-auto">
+        <img alt="Auriga company logo in gray background with white text, rectangular shape with stylized text Auriga Nusantara" class="sm:w-24 sm:h-12" height="64" src="image/Logo Auriga.png" width="96" />
+      </div>
+      <div class="flex flex-wrap text-xs text-black sm:pl-28 w-full sm:w-auto justify-between">
+        <div class="flex w-full sm:w-auto pr-2">
+          <div class="pr-18">
+            <p class="font-bold mt-4">
+              Hutan
+            </p>
+            <p class="poppins-regular cursor-pointer">
+              Sub kategori
+            </p>
+            <p class=" cursor-pointer">
+              Sub kategori
+            </p>
+          </div>
+          <div class="pr-18">
+            <p class="font-bold mt-4">
+              Kebun
+            </p>
+            <p class="cursor-pointer ">
+              Sub kategori
+            </p>
+            <p class="cursor-pointer">
+              Sub kategori
+            </p>
+          </div>
+          <div>
+              <p class="font-bold mt-4">
+              Tambang dan Energi
+            </p>
+            <p class="cursor-pointer">
+              Sub kategori
+            </p>
+            <p class="cursor-pointer">
+              Sub kategori
+            </p>
+          </div>
+        </div>
+        <div class="flex  w-full sm:w-auto">
+        <div class="pr-18">
+          <p class="font-bold mt-4">
+              Hukum
+            </p>
+            <p class="cursor-pointer">
+              Sub kategori
+            </p>
+            <p class="cursor-pointer">
+              Sub kategori
+            </p>
+          </div>
+          <div class="pr-15">
+          <p class="font-bold mt-4">
+              Novel
+            </p>
+            <p class="cursor-pointer">
+              Sub kategori
+            </p>
+            <p class="cursor-pointer">
+              Sub kategori
+            </p>
+          </div>
+         <div>
+          <p class="font-semibold mt-3">
+              Lainnya
+            </p>
+            <p class="cursor-pointer mt-1">
+              Sub kategori
+            </p>
+            <p class="cursor-pointer mt-0.5">
+              Sub kategori
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 sm:px-36 pb-1 text-center text-[12.5px] text-black select-none">
+      COPYRIGHT © 2025 AURIGA NUSANTARA. ALL RIGHTS RESERVED.
+    </div>
+    <div class="bg-[#1a3a05] text-white text-xs font-semibold flex justify-end px-6 sm:px-36 py-2">
+    </div>
+  </footer>
+
+  </body>
+
+</html>
+
+
