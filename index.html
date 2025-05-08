@@ -178,6 +178,8 @@
       </div>
     </div>
   </div>
+
+  
 <!--navbar-->
 <div class="bg-white mt-6 font-sans px-4 sm:px-6 md:px-12 lg:px-20 xl:px-48">
 
@@ -209,7 +211,8 @@
                 x-transition
                 aria-label="Scroll Left"
                 @click="scrollEl.scrollBy({ left: -240, behavior: 'smooth' })"
-                class="absolute left-[-20px] top-1/2 -translate-y-1/2 z-10 bg-gray-300 rounded-full w-10 h-10 flex items-center justify-center text-gray-600 hover:text-gray-800">
+                class="absolute left-[-20px] top-1/2 -translate-y-1/2 z-10 bg-gray-300 rounded-full w-10 h-10 hidden sm:flex items-center justify-center text-gray-600 hover:text-gray-800"
+>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
                   </svg>
@@ -219,7 +222,7 @@
             <!-- Carousel -->
             <div
                 x-ref="carousel"
-                class="overflow-x-auto scroll-smooth whitespace-nowrap flex gap-11 hide-scrollbar py-1">
+                class="overflow-x-auto scroll-smooth whitespace-nowrap flex gap-2 sm:gap-11 hide-scrollbar py-1">
                 
                 <a href="buku-detail.html"
                     class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
@@ -377,7 +380,7 @@
                 x-transition
                 aria-label="Scroll Right"
                 @click="scrollEl.scrollBy({ left: 900, behavior: 'smooth' })"
-                class="absolute right-[-18px] top-1/2 -translate-y-1/2 z-10 bg-gray-300 rounded-full w-8 h-8 flex items-center justify-center text-gray-600 hover:text-gray-800">
+                class="absolute right-[-18px] top-1/2 -translate-y-1/2 z-10 bg-gray-300 rounded-full w-8 h-8 hidden sm:flex items-center justify-center text-gray-600 hover:text-gray-800">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
