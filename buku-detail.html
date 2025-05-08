@@ -30,21 +30,21 @@
  <!--navbar-->
  <div class="w-full sticky top-0 bg-white z-[99999999]">
 
-    <div class="bg-[#1a3a05] text-white text-xs font-semibold flex justify-end py-2 sm:pl-4 px-[11.4rem]">
+  <div class="bg-[#1a3a05] text-white text-xs font-semibold flex justify-end py-2 sm:pl-4 px-6 sm:px-[11.4rem]">
       <a class="hover:underline" href="#">Buku terbaru</a>
       <a class="hover:underline ml-9" href="#">Hubungi kami</a>
     </div>
 
-    <header class="flex items-center  py-2 px-[10.5rem]">
+    <header class="flex items-center  py-2 sm:px-[10.5rem]">
       <!-- Kiri: Logo + Kategori -->
       <div class="flex items-center gap-[9.9rem] flex-shrink-0 mr-[0.8rem]">
         
-        <div class="w-12 h-12 sm:w-24 sm:h-16">
-          <img  
-           class="w-4 h-4 sm:w-24 sm:h-12  borde-black"
-          src="image/Logo Auriga.png"/>
+        <div class="w-24 h-16 lg:w-24 lg:h-16 sm:w-12 sm:h-12 flex items-center justify-center">
+          <img alt="Auriga company logo in gray background with white text, rectangular shape with stylized text Auriga Nusantara" class="sm:w-24 sm:h-12" height="64" src="image/Logo Auriga.png" width="96" />    
 
         </div>
+
+      
 
 
         <label
@@ -62,26 +62,33 @@
           type="text"
           placeholder="Cari kategori..."
           aria-label="Kategori"
-          class="border border-black text-sm py-1 px-2 w-full mr-36 max-w-full sm:max-w-none" />
+          class="border border-black text-sm py-1 px-2 w-full lg:mr-36 sm:mr-12 mr-6   max-w-full sm:max-w-none" />
+          <!--mr-4 sm:mr-12 rounded-sm focus:outline-none focus:ring-1 focus:ring-green-700"-->
 
         <!-- User Info -->
-        <div
-          x-data="{ dropdownOpen: false }"
-          class="relative flex items-center space-x-2 sm:space-x-3 flex-shrink-0 cursor-pointer select-none"
-          @click="dropdownOpen = !dropdownOpen"
-          @click.away="dropdownOpen = false">
+        <div @click="dropdownOpen = !dropdownOpen" 
+        @click.away="dropdownOpen = false" 
+        class="relative flex items-center space-x-2 sm:space-x-2 flex-shrink-0 cursor-pointer select-none sm:mr-0 mr-3 sm:ml-0 ml-auto" x-data="{ dropdownOpen: false }">
           <!-- Avatar -->
           <img
             alt="User avatar"
-            class="w-4 h-4 sm:w-9 sm:h-9 rounded-full border borde-black"
+            class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-black object-cover"
             src="image/pp.jpeg" />
 
-          <p class="font-bold text-sm sm:flex pr-3">
-            Hi, <span>Pengguna</span>
-          </p>
+            <p class="font-bold text-sm sm:flex pr-3 hidden">
+              Hi,
+              <span>
+               Pengguna
+              </span>
+             </p>
 
           <!-- Panah hanya untuk mobile -->
-          <p class="font-bold text-sm sm:hidden">v</p>
+          <p class="font-bold text-sm sm:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+              <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+            </svg>
+            
+          </p>
 
           <!-- Dropdown -->
           <div
@@ -135,7 +142,7 @@
     x-transition
     x-cloak
     @click.self="showModal = false"
-    class="fixed inset-0  z-[100000] pl-119 mt-2 pr-36 flex items-start justify-start pt-21">
+    class="fixed inset-0  z-[199999999] pl-119 mt-2 pr-36 flex items-start justify-start pt-21">
     <div class="bg-white border border-gray-300 shadow-lg w-full max-w-7xl py-8 px-8 mx-4">
       <div class="flex flex-col space-y-8 mb-24">
         <div>
@@ -172,6 +179,7 @@
     </div>
   </div>
 
+  
 
 <!--content-->
 <div class="bg-white" x-data="{ showTerms: false, agreed: false }" @close-modal.window="showTerms = false">
@@ -321,89 +329,89 @@ x-cloak>
           
 <!--footer-->
 <footer class="border-t border-red-600 mt-auto bg-white poppins-regular">
-    <div class="flex flex-col sm:flex-row items-start sm:items-center sm:px-49 py-[2.6rem] pb-12">
-      <div class="mt-0 sm:-mt-16 flex justify-center w-full sm:w-auto">
-        <img alt="Auriga company logo in gray background with white text, rectangular shape with stylized text Auriga Nusantara" class="sm:w-24 sm:h-12" height="64" src="image/Logo Auriga.png" width="96" />
-      </div>
-      <div class="flex flex-wrap text-xs text-black sm:pl-28 w-full sm:w-auto justify-between">
-        <div class="flex w-full sm:w-auto pr-2">
-          <div class="pr-18">
-            <p class="font-bold mt-4">
-              Hutan
-            </p>
-            <p class="poppins-regular cursor-pointer">
-              Sub kategori
-            </p>
-            <p class=" cursor-pointer">
-              Sub kategori
-            </p>
-          </div>
-          <div class="pr-18">
-            <p class="font-bold mt-4">
-              Kebun
-            </p>
-            <p class="cursor-pointer ">
-              Sub kategori
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-          </div>
-          <div>
-              <p class="font-bold mt-4">
-              Tambang dan Energi
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-          </div>
-        </div>
-        <div class="flex  w-full sm:w-auto">
+  <div class="flex flex-col sm:flex-row items-start sm:items-center sm:px-49 py-[2.6rem] pb-12">
+    <div class="mt-0 sm:-mt-16 flex justify-center w-full sm:w-auto">
+      <img alt="Auriga company logo in gray background with white text, rectangular shape with stylized text Auriga Nusantara" class="sm:w-24 sm:h-12" height="64" src="image/Logo Auriga.png" width="96" />
+    </div>
+    <div class="flex flex-wrap text-xs text-black sm:pl-28 w-full sm:w-auto justify-between">
+      <div class="flex w-full sm:w-auto pr-2">
         <div class="pr-18">
           <p class="font-bold mt-4">
-              Hukum
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-          </div>
-          <div class="pr-15">
+            Hutan
+          </p>
+          <p class="poppins-regular cursor-pointer">
+            Sub kategori
+          </p>
+          <p class=" cursor-pointer">
+            Sub kategori
+          </p>
+        </div>
+        <div class="pr-15 sm:pr-18">
           <p class="font-bold mt-4">
-              Novel
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-          </div>
-         <div>
-          <p class="font-semibold mt-3">
-              Lainnya
-            </p>
-            <p class="cursor-pointer mt-1">
-              Sub kategori
-            </p>
-            <p class="cursor-pointer mt-0.5">
-              Sub kategori
-            </p>
-          </div>
+            Kebun
+          </p>
+          <p class="cursor-pointer ">
+            Sub kategori
+          </p>
+          <p class="cursor-pointer">
+            Sub kategori
+          </p>
+        </div>
+        <div>
+            <p class="font-bold mt-4">
+            Tambang dan Energi
+          </p>
+          <p class="cursor-pointer">
+            Sub kategori
+          </p>
+          <p class="cursor-pointer">
+            Sub kategori
+          </p>
+        </div>
+      </div>
+      <div class="flex  w-full sm:w-auto">
+      <div class="pr-18">
+        <p class="font-bold mt-4">
+            Hukum
+          </p>
+          <p class="cursor-pointer">
+            Sub kategori
+          </p>
+          <p class="cursor-pointer">
+            Sub kategori
+          </p>
+        </div>
+        <div class="pr-15">
+        <p class="font-bold mt-4">
+            Novel
+          </p>
+          <p class="cursor-pointer">
+            Sub kategori
+          </p>
+          <p class="cursor-pointer">
+            Sub kategori
+          </p>
+        </div>
+       <div>
+        <p class="font-semibold mt-3">
+            Lainnya
+          </p>
+          <p class="cursor-pointer mt-1">
+            Sub kategori
+          </p>
+          <p class="cursor-pointer mt-0.5">
+            Sub kategori
+          </p>
         </div>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto px-6 sm:px-36 pb-1 text-center text-[12.5px] text-black select-none">
-      COPYRIGHT © 2025 AURIGA NUSANTARA. ALL RIGHTS RESERVED.
-    </div>
-    <div class="bg-[#1a3a05] text-white text-xs font-semibold flex justify-end px-6 sm:px-36 py-2">
-    </div>
-  </footer>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 sm:px-36 pb-1 text-center text-[12.5px] text-black select-none">
+    COPYRIGHT © 2025 AURIGA NUSANTARA. ALL RIGHTS RESERVED.
+  </div>
+  <div class="bg-[#1a3a05] text-white text-xs font-semibold flex justify-end px-6 sm:px-36 py-2">
+  </div>
+</footer>
 
   </body>
 
