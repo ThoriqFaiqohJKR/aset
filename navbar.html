@@ -66,53 +66,60 @@
           <!--mr-4 sm:mr-12 rounded-sm focus:outline-none focus:ring-1 focus:ring-green-700"-->
 
         <!-- User Info -->
-        <div @click="dropdownOpen = !dropdownOpen" 
-        @click.away="dropdownOpen = false" 
-        class="relative flex items-center space-x-2 sm:space-x-2 flex-shrink-0 cursor-pointer select-none sm:mr-0 mr-3 sm:ml-0 ml-auto" x-data="{ dropdownOpen: false }">
-          <!-- Avatar -->
-          <img
-            alt="User avatar"
-            class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-black object-cover"
-            src="image/pp.jpeg" />
+  <div 
+  x-data="{ dropdownOpen: false, isMobile: false }"
+  x-init="
+    isMobile = window.innerWidth < 640;
+    window.addEventListener('resize', () => {
+      isMobile = window.innerWidth < 640;
+      if (!isMobile) dropdownOpen = false; // reset dropdown saat pindah layar
+    });
+  "
+  @mouseenter="if(!isMobile) dropdownOpen = true"
+  @mouseleave="if(!isMobile) dropdownOpen = false"
+  @click="if(isMobile) dropdownOpen = !dropdownOpen"
+  @click.away="dropdownOpen = false"
+  class="relative flex items-center space-x-2 sm:space-x-2 flex-shrink-0 cursor-pointer select-none sm:mr-0 mr-3 sm:ml-0 ml-auto"
+>
+  <!-- Avatar -->
+  <img
+    alt="User avatar"
+    class="w-10 h-10 sm:w-10 sm:h-10 rounded-full border border-red-600 border-[3px] p-[2px] object-cover"
+    src="image/pp.jpeg"
+  />
 
-            <p class="font-bold text-sm sm:flex pr-3 hidden">
-              Hi,
-              <span>
-               Pengguna
-              </span>
-             </p>
+  <p class="font-bold text-sm sm:flex pr-3 hidden">
+    Hi,
+    <span>Pengguna</span>
+  </p>
 
-          <!-- Panah hanya untuk mobile -->
-          <p class="font-bold text-sm sm:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
-              <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-            </svg>
-            
-          </p>
+  <!-- Panah hanya untuk mobile -->
+  <p class="font-bold text-sm sm:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+      <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+    </svg>
+  </p>
 
-          <!-- Dropdown -->
-          <div
-            x-show="dropdownOpen"
-            @click.away="dropdownOpen = false"
-            class="absolute right-0 top-full mt-2 w-36 bg-white border border-gray-300 z-50 shadow-md">
-            <a href="{{ route('user.dashboard') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">Home</a>
+  <!-- Dropdown -->
+  <div
+    x-show="dropdownOpen"
+    @click.away="dropdownOpen = false"
+    class="absolute right-0 top-full mt-2 w-36 bg-white border border-gray-300 z-50 shadow-md"
+    x-transition
+  >
+   <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Home</a>
+<a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Buku</a>
+<a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Peminjaman</a>
+<a href="aset" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Aset</a>
+<a href="home.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Logout</a>
 
-            <a href="{{ route('user.buku.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">Buku</a>
 
-            <a href="{{ route('user.peminjaman.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">peminjaman</a>
-            <a href="aset" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">Aset</a>
-            <form id="logout-form" action="{{ route('user.logout') }}" method="POST" class="hidden">
-    
-</form>
+   
 
-<a href="#" 
-   class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700"
-   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-   Logout
-</a>
 
-          </div>
-        </div>
+  </div>
+</div>
+
       </div>
     </header>
 
@@ -142,122 +149,58 @@
     x-transition
     x-cloak
     @click.self="showModal = false"
-    class="fixed inset-0  z-[199999999] pl-119 mt-2 pr-36 flex items-start justify-start pt-21">
+    class="fixed inset-0  z-[199999999] pl-119 mt-2 pr-113 flex items-start justify-start pt-21">
     <div class="bg-white border border-gray-300 shadow-lg w-full max-w-7xl py-8 px-8 mx-4">
-      <div class="flex flex-col space-y-8 mb-24">
+      <div class="flex flex-col space-y-8 mb-2">
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Hukum</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight ">Hukum</p>
+          
         </div>
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Hutan</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight ">Hutan</p>
+          
         </div>
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Kebun</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight ">Kebun</p>
+          
         </div>
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Tambang dan Energi</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight ">Tambang dan Energi</p>
+          
         </div>
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Novel</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight">Novel</p>
+          
         </div>
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Lainnya</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight ">Lainnya</p>
+          
         </div>
       </div>
     </div>
   </div>
 <!--navbar-->
 
+<!-- Main Content -->
+
+
 <!--footer-->
 <footer class="border-t border-red-600 mt-auto bg-white poppins-regular">
-    <div class="flex flex-col sm:flex-row items-start sm:items-center sm:px-49 py-[2.6rem] pb-12">
-      <div class="mt-0 sm:-mt-16 flex justify-center w-full sm:w-auto">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center lg:px-44 px-2 py-4 border-b-2 border-black">
+      <div class="mx-auto sm:mx-0 lg:mt-0 sm:w-auto">
         <img alt="Auriga company logo in gray background with white text, rectangular shape with stylized text Auriga Nusantara" class="sm:w-24 sm:h-12" height="64" src="image/Logo Auriga.png" width="96" />
       </div>
-      <div class="flex flex-wrap text-xs text-black sm:pl-28 w-full sm:w-auto justify-between">
-        <div class="flex w-full sm:w-auto pr-2">
-          <div class="pr-18">
-            <p class="font-bold mt-4">
-              Hutan
-            </p>
-            <p class="poppins-regular cursor-pointer">
-              Sub kategori
-            </p>
-            <p class=" cursor-pointer">
-              Sub kategori
-            </p>
-          </div>
-          <div class="pr-15 sm:pr-18">
-            <p class="font-bold mt-4">
-              Kebun
-            </p>
-            <p class="cursor-pointer ">
-              Sub kategori
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-          </div>
-          <div>
-              <p class="font-bold mt-4">
-              Tambang dan Energi
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-          </div>
-        </div>
-        <div class="flex  w-full sm:w-auto">
-        <div class="pr-18">
-          <p class="font-bold mt-4">
-              Hukum
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-          </div>
-          <div class="pr-15">
-          <p class="font-bold mt-4">
-              Novel
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-            <p class="cursor-pointer">
-              Sub kategori
-            </p>
-          </div>
-         <div>
-          <p class="font-semibold mt-3">
-              Lainnya
-            </p>
-            <p class="cursor-pointer mt-1">
-              Sub kategori
-            </p>
-            <p class="cursor-pointer mt-0.5">
-              Sub kategori
-            </p>
-          </div>
-        </div>
-      </div>
+<div class="grid grid-cols-2 sm:flex flex-wrap sm:gap-x-24 gap-x-6 gap-y-2 text-xs text-black px-4 sm:px-12 lg:px-36 w-full justify-start mt-4 text-left">
+  <p class="font-semibold">Hutan</p>
+  <p class="font-semibold">Kebun</p>
+  <p class="font-semibold">Tambang dan Energi</p>
+  <p class="font-semibold">Hukum</p>
+  <p class="font-semibold">Novel</p>
+  <p class="font-semibold">Lainnya</p>
+</div>
+
+
+      
     </div>
     <div class="max-w-7xl mx-auto px-6 sm:px-36 pb-1 text-center text-[12.5px] text-black select-none">
       COPYRIGHT © 2025 AURIGA NUSANTARA. ALL RIGHTS RESERVED.

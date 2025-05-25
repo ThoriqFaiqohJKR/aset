@@ -66,53 +66,60 @@
           <!--mr-4 sm:mr-12 rounded-sm focus:outline-none focus:ring-1 focus:ring-green-700"-->
 
         <!-- User Info -->
-        <div @click="dropdownOpen = !dropdownOpen" 
-        @click.away="dropdownOpen = false" 
-        class="relative flex items-center space-x-2 sm:space-x-2 flex-shrink-0 cursor-pointer select-none sm:mr-0 mr-3 sm:ml-0 ml-auto" x-data="{ dropdownOpen: false }">
-          <!-- Avatar -->
-          <img
-            alt="User avatar"
-            class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-black object-cover"
-            src="image/pp.jpeg" />
+  <div 
+  x-data="{ dropdownOpen: false, isMobile: false }"
+  x-init="
+    isMobile = window.innerWidth < 640;
+    window.addEventListener('resize', () => {
+      isMobile = window.innerWidth < 640;
+      if (!isMobile) dropdownOpen = false; // reset dropdown saat pindah layar
+    });
+  "
+  @mouseenter="if(!isMobile) dropdownOpen = true"
+  @mouseleave="if(!isMobile) dropdownOpen = false"
+  @click="if(isMobile) dropdownOpen = !dropdownOpen"
+  @click.away="dropdownOpen = false"
+  class="relative flex items-center space-x-2 sm:space-x-2 flex-shrink-0 cursor-pointer select-none sm:mr-0 mr-3 sm:ml-0 ml-auto"
+>
+  <!-- Avatar -->
+  <img
+    alt="User avatar"
+    class="w-10 h-10 sm:w-10 sm:h-10 rounded-full border border-red-600 border-[3px] p-[2px] object-cover"
+    src="image/pp.jpeg"
+  />
 
-            <p class="font-bold text-sm sm:flex pr-3 hidden">
-              Hi,
-              <span>
-               Pengguna
-              </span>
-             </p>
+  <p class="font-bold text-sm sm:flex pr-3 hidden">
+    Hi,
+    <span>Pengguna</span>
+  </p>
 
-          <!-- Panah hanya untuk mobile -->
-          <p class="font-bold text-sm sm:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
-              <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-            </svg>
-            
-          </p>
+  <!-- Panah hanya untuk mobile -->
+  <p class="font-bold text-sm sm:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+      <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+    </svg>
+  </p>
 
-          <!-- Dropdown -->
-          <div
-            x-show="dropdownOpen"
-            @click.away="dropdownOpen = false"
-            class="absolute right-0 top-full mt-2 w-36 bg-white border border-gray-300 z-50 shadow-md">
-            <a href="{{ route('user.dashboard') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">Home</a>
+  <!-- Dropdown -->
+  <div
+    x-show="dropdownOpen"
+    @click.away="dropdownOpen = false"
+    class="absolute right-0 top-full mt-2 w-36 bg-white border border-gray-300 z-50 shadow-md"
+    x-transition
+  >
+   <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Home</a>
+<a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Buku</a>
+<a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Peminjaman</a>
+<a href="aset" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Aset</a>
+<a href="home.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Logout</a>
 
-            <a href="{{ route('user.buku.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">Buku</a>
 
-            <a href="{{ route('user.peminjaman.index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">peminjaman</a>
-            <a href="aset" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700">Aset</a>
-            <form id="logout-form" action="{{ route('user.logout') }}" method="POST" class="hidden">
-    
-</form>
+   
 
-<a href="#" 
-   class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100 hover:text-red-700"
-   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-   Logout
-</a>
 
-          </div>
-        </div>
+  </div>
+</div>
+
       </div>
     </header>
 
@@ -142,46 +149,39 @@
     x-transition
     x-cloak
     @click.self="showModal = false"
-    class="fixed inset-0  z-[199999999] pl-119 mt-2 pr-36 flex items-start justify-start pt-21">
+    class="fixed inset-0  z-[199999999] pl-119 mt-2 pr-113 flex items-start justify-start pt-21">
     <div class="bg-white border border-gray-300 shadow-lg w-full max-w-7xl py-8 px-8 mx-4">
-      <div class="flex flex-col space-y-8 mb-24">
+      <div class="flex flex-col space-y-8 mb-2">
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Hukum</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight ">Hukum</p>
+          
         </div>
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Hutan</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight ">Hutan</p>
+          
         </div>
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Kebun</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight ">Kebun</p>
+          
         </div>
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Tambang dan Energi</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight ">Tambang dan Energi</p>
+          
         </div>
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Novel</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight">Novel</p>
+          
         </div>
         <div>
-          <p class="font-bold text-sm leading-tight mb-2">Lainnya</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
-          <p class="text-xs leading-tight ml-4">Sub kategori</p>
+          <p class="font-bold text-sm leading-tight ">Lainnya</p>
+          
         </div>
       </div>
     </div>
   </div>
+<!--navbar-->
 
-  
-
-<!--content-->
+<!-- Main Content -->
 <div class="bg-white" x-data="{ showTerms: false, agreed: false }" @close-modal.window="showTerms = false">
     
   <div class="flex flex-col items-start px-6 sm:px-10 md:px-20 lg:px-[11.4rem] py-4 mt-10">
@@ -192,40 +192,71 @@
 
       </div>
 
-      <div class="flex flex-col lg:flex-row lg:space-x-2 w-full">
-          <!-- Book Cover -->
-          <div class="flex justify-center ">
-              <img src="image/buku_detail.png"
-                   alt="Judul Buku"
-                   class="lg:w-94 lg:h-full w-50 h-70 object-cover border border-gray-900 p-3 justify-center" />
-          </div>
-          
-            
-          
+      <div class="flex flex-col lg:flex-row gap-6 items-start">
+  <!-- Gambar -->
+<div class="p-3 border border-gray-900 max-w-[300px] flex-shrink-0 mx-auto">
+  <img src="image/buku_detail.png"
+       alt="Judul Buku"
+       class="w-full h-auto object-contain" />
+</div>
+
+  <!-- Konten -->
+  <!-- Konten -->
+<div class="flex-1 flex flex-col justify-between">
+  <!-- Paragraf deskripsi -->
+  <div>
+    <p class="font-bold text-md pt-2 sm:pt-0 lg:pr-102 lg:mb-1 mb-2">
+      Biologi Hutan: Morfologi Tumbuhan
+    </p>
+ <div x-data="{ expanded: false }">
+  <!-- Paragraf pertama: selalu tampil -->
+  <p class="text-xs lg:mr-70 sm:max-w-[40rem] mb-4">
+    Buku Biologi Hutan: Morfologi Tumbuhan mengupas tentang struktur luar tumbuhan yang terdiri dari organ vegetatif dan organ reproduktif. Organ vegetatif mencakup akar, batang, dan daun, yang masing-masing memiliki fungsi vital dalam proses fotosintesis, penyerapan air, serta pertumbuhan tanaman. Sementara itu, organ reproduktif seperti bunga, buah, dan biji berperan dalam perkembangbiakan tumbuhan. Buku ini juga mengajarkan cara mengenali dan mendeskripsikan morfologi tumbuhan secara sistematis, termasuk pencandraan serta penyusunan rumus dan diagram bunga, yang sangat berguna dalam studi botani dan kehutanan.
+  </p>
+
+  <!-- Paragraf kedua: hanya tampil saat expanded -->
+  <p x-show="expanded"
+     x-transition
+     class="text-xs lg:mr-70 sm:max-w-[40rem] mb-4">
+    Buku Biologi Hutan: Morfologi Tumbuhan mengupas tentang struktur luar tumbuhan yang terdiri dari organ vegetatif dan organ reproduktif. Organ vegetatif mencakup akar, batang, dan daun, yang masing-masing memiliki fungsi vital dalam proses fotosintesis, penyerapan air, serta pertumbuhan tanaman. Sementara itu, organ reproduktif seperti bunga, buah, dan biji berperan dalam perkembangbiakan tumbuhan. Buku ini juga mengajarkan cara mengenali dan mendeskripsikan morfologi tumbuhan secara sistematis, termasuk pencandraan serta penyusunan rumus dan diagram bunga, yang sangat berguna dalam studi botani dan kehutanan.
+  </p>
+
+  <!-- Tombol toggle -->
+  <button
+    @click="expanded = !expanded"
+    class="text-xs text-blue-600 font-semibold mb-4">
+    <span x-show="!expanded">Read more</span>
+    <span x-show="expanded">Read less</span>
+  </button>
+</div>
+
+  </div>
+
+  <!-- Informasi + Button -->
+  <div class="mt-auto space-y-1">
+    <p class="text-xs font-semibold">
+      Penulis : Lorem ipsum dolor sit,
+    </p>
+    <p class="text-xs font-semibold">
+      Tahun Terbit : Lorem ipsum dolor sit,
+    </p>
+    <p class="text-xs font-semibold">
+      Penerbit : Lorem ipsum dolor sit,
+    </p>
+
+    <button class="mt-2 bg-gray-300 font-bold text-sm px-[0.6rem] py-[0.4rem] w-max"
+            @click="showTerms = true"
+            type="button">Pinjam
+    </button>
+  </div>
+</div>
 
 
-          <div class="flex flex-col justify-between w-full sm:mt-4 lg:-mt-1 lg:pl-10 pl-0 pr-2 ">
-          <!-- mt-4 lg:mt-0 pl-0 lg:pl-10 pr-2">-->
-              <div>
-                  <p class="font-bold text-md pt-2  sm:pt-0 lg:pr-102 lg:mb-1 mb-2">
+  
+  
+  
+</div>
 
-                      Biologi Hutan: Morfologi Tumbuhan 
-                  </p>
-                  <p class="text-xs lg:mr-70 sm:max-w-[40rem]">
-                      Buku Biologi Hutan: Morfologi Tumbuhan mengupas tentang struktur luar tumbuhan yang terdiri dari organ vegetatif dan organ reproduktif. Organ vegetatif mencakup akar, batang, dan daun, yang masing-masing memiliki fungsi vital dalam proses fotosintesis, penyerapan air, serta pertumbuhan tanaman. Sementara itu, organ reproduktif seperti bunga, buah, dan biji berperan dalam perkembangbiakan tumbuhan. Buku ini juga mengajarkan cara mengenali dan mendeskripsikan morfologi tumbuhan secara sistematis, termasuk pencandraan serta penyusunan rumus dan diagram bunga, yang sangat berguna dalam studi botani dan kehutanan.
-                  </p>
-                  <br>
-                  <p class="text-xs lg:mr-70 sm:max-w-[40rem] mb-16   ">
-                      Buku Biologi Hutan: Morfologi Tumbuhan mengupas tentang struktur luar tumbuhan yang terdiri dari organ vegetatif dan organ reproduktif. Organ vegetatif mencakup akar, batang, dan daun, yang masing-masing memiliki fungsi vital dalam proses fotosintesis, penyerapan air, serta pertumbuhan tanaman. Sementara itu, organ reproduktif seperti bunga, buah, dan biji berperan dalam perkembangbiakan tumbuhan. Buku ini juga mengajarkan cara mengenali dan mendeskripsikan morfologi tumbuhan secara sistematis, termasuk pencandraan serta penyusunan rumus dan diagram bunga, yang sangat berguna dalam studi botani dan kehutanan.
-                  </p>
-              </div>
-
-              <button class="bg-gray-300 font-bold text-sm px-[0.6rem] py-[0.4rem] w-max"
-                  @click="showTerms = true"
-                  type="button">Pinjam
-              </button>
-          </div>
-      </div>
 
       <div class="w-full mt-9 sm:px-10 md:px-20 lg:pl-46 lg:pr-0">
 
@@ -326,92 +357,31 @@ x-cloak>
 
 </div>
 
-          
+
 <!--footer-->
 <footer class="border-t border-red-600 mt-auto bg-white poppins-regular">
-  <div class="flex flex-col sm:flex-row items-start sm:items-center sm:px-49 py-[2.6rem] pb-12">
-    <div class="mt-0 sm:-mt-16 flex justify-center w-full sm:w-auto">
-      <img alt="Auriga company logo in gray background with white text, rectangular shape with stylized text Auriga Nusantara" class="sm:w-24 sm:h-12" height="64" src="image/Logo Auriga.png" width="96" />
-    </div>
-    <div class="flex flex-wrap text-xs text-black sm:pl-28 w-full sm:w-auto justify-between">
-      <div class="flex w-full sm:w-auto pr-2">
-        <div class="pr-18">
-          <p class="font-bold mt-4">
-            Hutan
-          </p>
-          <p class="poppins-regular cursor-pointer">
-            Sub kategori
-          </p>
-          <p class=" cursor-pointer">
-            Sub kategori
-          </p>
-        </div>
-        <div class="pr-15 sm:pr-18">
-          <p class="font-bold mt-4">
-            Kebun
-          </p>
-          <p class="cursor-pointer ">
-            Sub kategori
-          </p>
-          <p class="cursor-pointer">
-            Sub kategori
-          </p>
-        </div>
-        <div>
-            <p class="font-bold mt-4">
-            Tambang dan Energi
-          </p>
-          <p class="cursor-pointer">
-            Sub kategori
-          </p>
-          <p class="cursor-pointer">
-            Sub kategori
-          </p>
-        </div>
+    <div class="flex flex-col sm:flex-row items-start sm:items-center lg:px-44 px-2 py-4 border-b-2 border-black">
+      <div class="mx-auto sm:mx-0 lg:mt-0 sm:w-auto">
+        <img alt="Auriga company logo in gray background with white text, rectangular shape with stylized text Auriga Nusantara" class="sm:w-24 sm:h-12" height="64" src="image/Logo Auriga.png" width="96" />
       </div>
-      <div class="flex  w-full sm:w-auto">
-      <div class="pr-18">
-        <p class="font-bold mt-4">
-            Hukum
-          </p>
-          <p class="cursor-pointer">
-            Sub kategori
-          </p>
-          <p class="cursor-pointer">
-            Sub kategori
-          </p>
-        </div>
-        <div class="pr-15">
-        <p class="font-bold mt-4">
-            Novel
-          </p>
-          <p class="cursor-pointer">
-            Sub kategori
-          </p>
-          <p class="cursor-pointer">
-            Sub kategori
-          </p>
-        </div>
-       <div>
-        <p class="font-semibold mt-3">
-            Lainnya
-          </p>
-          <p class="cursor-pointer mt-1">
-            Sub kategori
-          </p>
-          <p class="cursor-pointer mt-0.5">
-            Sub kategori
-          </p>
-        </div>
-      </div>
+<div class="grid grid-cols-2 sm:flex flex-wrap sm:gap-x-24 gap-x-6 gap-y-2 text-xs text-black px-4 sm:px-12 lg:px-32 w-full justify-start mt-4 text-left">
+  <p class="font-semibold">Hutan</p>
+  <p class="font-semibold">Kebun</p>
+  <p class="font-semibold">Tambang dan Energi</p>
+  <p class="font-semibold">Hukum</p>
+  <p class="font-semibold">Novel</p>
+  <p class="font-semibold">Lainnya</p>
+</div>
+
+
+      
     </div>
-  </div>
-  <div class="max-w-7xl mx-auto px-6 sm:px-36 pb-1 text-center text-[12.5px] text-black select-none">
-    COPYRIGHT © 2025 AURIGA NUSANTARA. ALL RIGHTS RESERVED.
-  </div>
-  <div class="bg-[#1a3a05] text-white text-xs font-semibold flex justify-end px-6 sm:px-36 py-2">
-  </div>
-</footer>
+    <div class="max-w-7xl mx-auto px-6 sm:px-36 pb-1 text-center text-[12.5px] text-black select-none">
+      COPYRIGHT © 2025 AURIGA NUSANTARA. ALL RIGHTS RESERVED.
+    </div>
+    <div class="bg-[#1a3a05] text-white text-xs font-semibold flex justify-end px-6 sm:px-36 py-2">
+    </div>
+  </footer>
 
   </body>
 
