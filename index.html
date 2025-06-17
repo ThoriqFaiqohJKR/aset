@@ -273,9 +273,13 @@
                 x-transition
                 aria-label="Scroll Left"
                 @click="scrollEl.scrollBy({ left: -240, behavior: 'smooth' })"
-                class="absolute left-[-20px] top-1/2 -translate-y-1/2 z-10 bg-gray-300 rounded-full w-10 h-10 hidden sm:flex items-center justify-center text-gray-600 hover:text-gray-800"
+                class="absolute left-[-20px] top-1/2 -translate-y-1/2 z-10 bg-gray-300 rounded-full w-8 h-8 hidden sm:flex items-center justify-center text-gray-600 hover:text-gray-800"
 >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <svg xmlns="http://www.w3.org/2000/svg"   fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="w-4 h-4 text-gray-700 font-bold">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
                   </svg>
                   
@@ -287,146 +291,119 @@
                 class="overflow-x-auto scroll-smooth whitespace-nowrap flex gap-2 sm:gap-11 hide-scrollbar py-1">
                 
                 <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                    <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+  <img src="image/buku2.jpg" alt="Buku"
+       class="max-w-full max-h-full object-contain" />
+</div>
 
-                    </div>
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
+                                Buku Ajar Biologi Hutan Bagian 1
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
-                            </p>
+                          
                         </div>
                         <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                           
                         </div>
                     </div>
                 </a>
-                 <a aria-disabled="true" class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-[310px] flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70" href="buku-detail.html" tabindex="-1">
-                  <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden  relative">
-                   
-                   <div class="absolute inset-0 flex items-center justify-center">
-             
-                   </div>
-                  </div>
-                  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                   <div>
-                    <p class="font-semibold text-sm break-words whitespace-normal">
-                     Judul Buku 2
-                    </p>
-                    <p class="font-semibold text-sm break-words whitespace-normal text-gray-700">
-                     Subtitle Buku 2
-                    </p>
-                   </div>
-                   <div class="mt-4">
-                    <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                     Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-                    </p>
-                   </div>
-                  </div>
-                 </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+ <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+  <img src="image/buku2.jpg" alt="Buku"
+       class="max-w-full max-h-full object-contain" />
+</div>
 
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
+                                Pariwisata Alam 54 Taman Nasioal Indonesia
                             </p>
                             
                         </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
-                        </div>
                     </div>
                 </a>
                 <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+  <img src="image/buku_detail.png" alt="Buku"
+       class="max-w-full max-h-full object-contain" />
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
+                                Judul Buku
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                            
                         </div>
                     </div>
-                </a>
+                </a> 
                 <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+  <img src="image/buku2.jpg" alt="Buku"
+       class="max-w-full max-h-full object-contain" />
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
+                                Pariwisata Alam 54 Taman Nasioal Indonesia
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
-                            </p>
+                            
                         </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
+                    </div>
+                </a> 
+                <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <!-- Gambar kotak -->
+ <div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+  <img src="image/buku2.jpg" alt="Buku"
+       class="max-w-full max-h-full object-contain" />
+</div>
 
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                                Pariwisata Alam 54 Taman Nasioal Indonesia
                             </p>
+                            
+                        </div>
+                    </div>
+                </a>
+                <a aria-disabled="true" 
+                class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-full flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70" href="buku-detail.html" tabindex="-1">
+                    <!-- Gambar kotak -->
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+  <img src="image/buku2.jpg" alt="Buku"
+       class="max-w-full max-h-full object-contain" />
+</div>
+
+
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                                Pariwisata Alam 54 Taman Nasioal Indonesia
+                            </p>
+                            
                         </div>
                     </div>
                 </a>
@@ -520,150 +497,118 @@
                 x-ref="carousel"
                 class="overflow-x-auto scroll-smooth whitespace-nowrap flex gap-2 sm:gap-11 hide-scrollbar py-1">
                 
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                    <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
 
-                    </div>
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                 <a aria-disabled="true" class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-[310px] flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70" href="buku-detail.html" tabindex="-1">
-                  <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden  relative">
-                   
-                   <div class="absolute inset-0 flex items-center justify-center">
-             
-                   </div>
-                  </div>
-                  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                   <div>
-                    <p class="font-semibold text-sm break-words whitespace-normal">
-                     Judul Buku 2
-                    </p>
-                    <p class="font-semibold text-sm break-words whitespace-normal text-gray-700">
-                     Subtitle Buku 2
-                    </p>
-                   </div>
-                   <div class="mt-4">
-                    <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                     Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-                    </p>
-                   </div>
-                  </div>
-                 </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
+                         Judul 1
                             </p>
                             
                         </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
+                    </div>
+                </a> 
+         <a
+  aria-disabled="true"
+  class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-full flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70"
+  href="buku-detail.html"
+  tabindex="-1"
+>
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+  </div>
 
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+  <!-- Judul dan Ringkasan -->
+  <div
+    class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start"
+  >
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">
+        Judul buku 2
+      </p>
+    </div>
+  </div>
+</a>
+                           <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
+                         Judul 3
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                            
                         </div>
                     </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+                </a> 
+                             <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
+                         Judul 4
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                            
                         </div>
                     </div>
-                </a>
+                </a> 
+                            <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <!-- Gambar kotak -->
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                         Judul 5
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a> 
+                           <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <!-- Gambar kotak -->
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                         Judul 6
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a> 
                 
             </div>
 
@@ -752,150 +697,118 @@
                 x-ref="carousel"
                 class="overflow-x-auto scroll-smooth whitespace-nowrap flex gap-2 sm:gap-11 hide-scrollbar py-1">
                 
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                    <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
 
-                    </div>
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                 <a aria-disabled="true" class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-[310px] flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70" href="buku-detail.html" tabindex="-1">
-                  <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden  relative">
-                   
-                   <div class="absolute inset-0 flex items-center justify-center">
-             
-                   </div>
-                  </div>
-                  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                   <div>
-                    <p class="font-semibold text-sm break-words whitespace-normal">
-                     Judul Buku 2
-                    </p>
-                    <p class="font-semibold text-sm break-words whitespace-normal text-gray-700">
-                     Subtitle Buku 2
-                    </p>
-                   </div>
-                   <div class="mt-4">
-                    <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                     Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-                    </p>
-                   </div>
-                  </div>
-                 </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
+                         Judul 1
                             </p>
                             
                         </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
+                    </div>
+                </a> 
+         <a
+  aria-disabled="true"
+  class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-full flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70"
+  href="buku-detail.html"
+  tabindex="-1"
+>
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+  </div>
 
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+  <!-- Judul dan Ringkasan -->
+  <div
+    class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start"
+  >
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">
+        Judul buku 2
+      </p>
+    </div>
+  </div>
+</a>
+                           <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
+                         Judul 3
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                            
                         </div>
                     </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+                </a> 
+                             <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
+                         Judul 4
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                            
                         </div>
                     </div>
-                </a>
+                </a> 
+                            <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <!-- Gambar kotak -->
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                         Judul 5
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a> 
+                           <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <!-- Gambar kotak -->
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                         Judul 6
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a> 
                 
             </div>
 
@@ -982,150 +895,118 @@
                 x-ref="carousel"
                 class="overflow-x-auto scroll-smooth whitespace-nowrap flex gap-2 sm:gap-11 hide-scrollbar py-1">
                 
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                    <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
 
-                    </div>
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                 <a aria-disabled="true" class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-[310px] flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70" href="buku-detail.html" tabindex="-1">
-                  <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden  relative">
-                   
-                   <div class="absolute inset-0 flex items-center justify-center">
-             
-                   </div>
-                  </div>
-                  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                   <div>
-                    <p class="font-semibold text-sm break-words whitespace-normal">
-                     Judul Buku 2
-                    </p>
-                    <p class="font-semibold text-sm break-words whitespace-normal text-gray-700">
-                     Subtitle Buku 2
-                    </p>
-                   </div>
-                   <div class="mt-4">
-                    <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                     Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-                    </p>
-                   </div>
-                  </div>
-                 </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
+                         Judul 1
                             </p>
                             
                         </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
+                    </div>
+                </a> 
+         <a
+  aria-disabled="true"
+  class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-full flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70"
+  href="buku-detail.html"
+  tabindex="-1"
+>
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+  </div>
 
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+  <!-- Judul dan Ringkasan -->
+  <div
+    class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start"
+  >
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">
+        Judul buku 2
+      </p>
+    </div>
+  </div>
+</a>
+                           <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
+                         Judul 3
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                            
                         </div>
                     </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+                </a> 
+                             <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
+                         Judul 4
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                            
                         </div>
                     </div>
-                </a>
+                </a> 
+                            <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <!-- Gambar kotak -->
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                         Judul 5
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a> 
+                           <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <!-- Gambar kotak -->
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                         Judul 6
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a> 
                 
             </div>
 
@@ -1214,150 +1095,118 @@
                 x-ref="carousel"
                 class="overflow-x-auto scroll-smooth whitespace-nowrap flex gap-2 sm:gap-11 hide-scrollbar py-1">
                 
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                    <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
 
-                    </div>
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                 <a aria-disabled="true" class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-[310px] flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70" href="buku-detail.html" tabindex="-1">
-                  <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden  relative">
-                   
-                   <div class="absolute inset-0 flex items-center justify-center">
-             
-                   </div>
-                  </div>
-                  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                   <div>
-                    <p class="font-semibold text-sm break-words whitespace-normal">
-                     Judul Buku 2
-                    </p>
-                    <p class="font-semibold text-sm break-words whitespace-normal text-gray-700">
-                     Subtitle Buku 2
-                    </p>
-                   </div>
-                   <div class="mt-4">
-                    <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                     Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-                    </p>
-                   </div>
-                  </div>
-                 </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
+                         Judul 1
                             </p>
                             
                         </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
+                    </div>
+                </a> 
+         <a
+  aria-disabled="true"
+  class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-full flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70"
+  href="buku-detail.html"
+  tabindex="-1"
+>
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+  </div>
 
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+  <!-- Judul dan Ringkasan -->
+  <div
+    class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start"
+  >
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">
+        Judul buku 2
+      </p>
+    </div>
+  </div>
+</a>
+                           <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
+                         Judul 3
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                            
                         </div>
                     </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+                </a> 
+                             <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
+                         Judul 4
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                            
                         </div>
                     </div>
-                </a>
+                </a> 
+                            <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <!-- Gambar kotak -->
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                         Judul 5
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a> 
+                           <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <!-- Gambar kotak -->
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                         Judul 6
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a> 
                 
             </div>
 
@@ -1446,150 +1295,118 @@
                 x-ref="carousel"
                 class="overflow-x-auto scroll-smooth whitespace-nowrap flex gap-2 sm:gap-11 hide-scrollbar py-1">
                 
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                    <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
 
-                    </div>
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 1
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                 <a aria-disabled="true" class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-[310px] flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70" href="buku-detail.html" tabindex="-1">
-                  <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden  relative">
-                   
-                   <div class="absolute inset-0 flex items-center justify-center">
-             
-                   </div>
-                  </div>
-                  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                   <div>
-                    <p class="font-semibold text-sm break-words whitespace-normal">
-                     Judul Buku 2
-                    </p>
-                    <p class="font-semibold text-sm break-words whitespace-normal text-gray-700">
-                     Subtitle Buku 2
-                    </p>
-                   </div>
-                   <div class="mt-4">
-                    <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                     Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-                    </p>
-                   </div>
-                  </div>
-                 </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 3
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
-                            </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 4
+                         Judul 1
                             </p>
                             
                         </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
+                    </div>
+                </a> 
+         <a
+  aria-disabled="true"
+  class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-full flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70"
+  href="buku-detail.html"
+  tabindex="-1"
+>
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+  </div>
 
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+  <!-- Judul dan Ringkasan -->
+  <div
+    class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start"
+  >
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">
+        Judul buku 2
+      </p>
+    </div>
+  </div>
+</a>
+                           <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
+                         Judul 3
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 5
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                            
                         </div>
                     </div>
-                </a>
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-white boeder  border-gray-700 shadow-sm h-[310px] flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale- 100 hover:shadow-md hover:border-gray-400">
+                </a> 
+                             <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
                     <!-- Gambar kotak -->
-                     <div class="w-40 h-40 bg-gray-300 flex items-center justify-center overflow-hidden ">
-                
-                    </div>
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
                     <!-- Judul dan Ringkasan -->
                     <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
                         <div>
                             <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
+                         Judul 4
                             </p>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Judul Buku 6
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-[12px] leading-snug text-gray-600 break-words whitespace-normal line-clamp-3">
-                                Ringkasan buku adalah gambaran singkat dari isi sebuah buku yang mencakup ide utama, alur cerita, atau pokok pembahasan tanpa harus membaca keseluruhan teks. Tujuannya adalah membantu pembaca memahami inti dari buku tersebut dengan cepat, baik untuk keperluan belajar, referensi, atau sekadar mendapatkan wawasan.
-
-                            </p>
+                            
                         </div>
                     </div>
-                </a>
+                </a> 
+                            <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <!-- Gambar kotak -->
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                         Judul 5
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a> 
+                           <a href="buku-detail.html"
+                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+                    <!-- Gambar kotak -->
+<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+
+                    <!-- Judul dan Ringkasan -->
+                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+                        <div>
+                            <p class="font-semibold text-sm break-words whitespace-normal">
+                         Judul 6
+                            </p>
+                            
+                        </div>
+                    </div>
+                </a> 
                 
             </div>
 

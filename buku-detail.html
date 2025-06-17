@@ -107,7 +107,7 @@
     class="absolute right-0 top-full mt-2 w-36 bg-white border border-gray-300 z-50 shadow-md"
     x-transition
   >
-   <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Home</a>
+   <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Home</a>
 <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Buku</a>
 <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Peminjaman</a>
 <a href="aset" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Aset</a>
@@ -194,13 +194,13 @@
 
       <div class="flex flex-col lg:flex-row gap-6 items-start">
   <!-- Gambar -->
-<div class="p-3 border border-gray-900 max-w-[300px] flex-shrink-0 mx-auto">
-  <img src="image/buku_detail.png"
+<div class="p-3 w-[280px] h-[397px]  flex items-center justify-center mx-auto border ">
+  <img src="image/buku2.jpg"
        alt="Judul Buku"
-       class="w-full h-auto object-contain" />
+       class="max-w-full max-h-full object-contain" />
 </div>
 
-  <!-- Konten -->
+
   <!-- Konten -->
 <div class="flex-1 flex flex-col justify-between">
   <!-- Paragraf deskripsi -->
@@ -258,43 +258,168 @@
 </div>
 
 
-      <div class="w-full mt-9 sm:px-10 md:px-20 lg:pl-46 lg:pr-0">
+<div class="w-full mt-9" x-data="{
+    books: Array.from({ length: 15 }), // total 15 buku dummy
+    showCount: 5
+}">
+  <p class="font-bold text-xs mb-3">Rekomendasi Buku</p>
 
-          <p class="font-bold text-xs">
-              Buku Hutan Lainnya
-          </p>
-          <div class="flex gap-26 md:gap-[2.42rem] overflow-x-auto">
+  <!-- Baris pertama (scroll horizontal 5 buku pertama) -->
+  <div class="flex gap-12 overflow-x-auto pb-2">
+    <a href="buku-detail.html" class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
 
-          
-                  <div class="flex-none border border-gray-400  bg-white p-[0.7rem] w-33 sm:w-33">
-                      <img alt="Book cover" class="w-32 h-[7.1rem] object-cover " src="https://placehold.co/144x144/cccccc/cccccc" />
-                      <p class="font-bold text-[9px] leading-tight line-clamp-2 mt-3 min-h-[1.3rem]">Judul Buku 1</p>
-                      <p class="text-[8px] leading-tight mb-1 mt-3 ">Ringkasan
-                    </div>
-                  <div class="flex-none border border-gray-400  bg-white p-[0.7rem] w-33 sm:w-33">
-                      <img alt="Book cover" class="w-32 h-[7.1rem] object-cover " src="https://placehold.co/144x144/cccccc/cccccc" />
-                      <p class="font-bold text-[9px] leading-tight line-clamp-2 mt-3 min-h-[1.3rem]">Judul Buku 2</p>
-                      <p class="text-[8px] leading-tight mb-1 mt-3 ">Ringkasan
-                    </div>
-                  <div class="flex-none border border-gray-400  bg-white p-[0.7rem] w-33 sm:w-33">
-                      <img alt="Book cover" class="w-32 h-[7.1rem] object-cover " src="https://placehold.co/144x144/cccccc/cccccc" />
-                      <p class="font-bold text-[9px] leading-tight line-clamp-2 mt-3 min-h-[1.3rem]">Judul Buku 3</p>
-                      <p class="text-[8px] leading-tight mb-1 mt-3 ">Ringkasan
-                    </div>
-                  <div class="flex-none border border-gray-400  bg-white p-[0.7rem] w-33 sm:w-33">
-                      <img alt="Book cover" class="w-32 h-[7.1rem] object-cover " src="https://placehold.co/144x144/cccccc/cccccc" />
-                      <p class="font-bold text-[9px] leading-tight line-clamp-2 mt-3 min-h-[1.3rem]">Judul Buku 4</p>
-                      <p class="text-[8px] leading-tight mb-1 mt-3 ">Ringkasan
-                    </div>
-              
-                  <div class="flex-none border border-gray-400  bg-white p-[0.7rem] w-33 sm:w-33">
-                      <img alt="Book cover" class="w-32 h-[7.1rem] object-cover " src="https://placehold.co/144x144/cccccc/cccccc" />
-                      <p class="font-bold text-[9px] leading-tight line-clamp-2 mt-3 min-h-[1.3rem]">Judul Buku 5</p>
-                      <p class="text-[8px] leading-tight mb-1 mt-3 ">Ringkasan
-                    </div>
-              
-              </div>
-      </div>
+</div>
+
+  <!-- Judul dan Ringkasan -->
+  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">Judul 1</p>
+    </div>
+  </div>
+</a><a href="buku-detail.html" class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+  <!-- Judul dan Ringkasan -->
+  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">Judul 2</p>
+    </div>
+  </div>
+</a><a href="buku-detail.html" class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+  <!-- Judul dan Ringkasan -->
+  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">Judul 3</p>
+    </div>
+  </div>
+</a><a href="buku-detail.html" class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+  <!-- Judul dan Ringkasan -->
+  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">Judul 4</p>
+    </div>
+  </div>
+</a><a href="buku-detail.html" class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+  <!-- Judul dan Ringkasan -->
+  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">Judul 5</p>
+    </div>
+  </div>
+</a>
+  </div>
+
+  <!-- Baris tambahan (setelah klik "Muat Lebih Banyak") -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-12 mt-4" x-show="showCount > 5">
+   <a href="buku-detail.html" class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+  <!-- Judul dan Ringkasan -->
+  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">Judul 1</p>
+    </div>
+  </div>
+</a>
+<a href="buku-detail.html" class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+  <!-- Judul dan Ringkasan -->
+  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">Judul 2</p>
+    </div>
+  </div>
+</a>
+<a href="buku-detail.html" class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+  <!-- Judul dan Ringkasan -->
+  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">Judul 3</p>
+    </div>
+  </div>
+</a>
+<a href="buku-detail.html" class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+  <!-- Judul dan Ringkasan -->
+  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">Judul 4</p>
+    </div>
+  </div>
+</a>
+<a href="buku-detail.html" class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
+  <!-- Gambar kotak -->
+  <div
+    class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
+
+</div>
+
+  <!-- Judul dan Ringkasan -->
+  <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
+    <div>
+      <p class="font-semibold text-sm break-words whitespace-normal">Judul 5</p>
+    </div>
+  </div>
+</a>
+
+  </div>
+
+  <!-- Tombol "Muat Lebih Banyak" -->
+  <div class="text-right mt-2">
+    <button 
+      x-show="showCount < books.length"
+      x-on:click="showCount += 5" 
+      class="text-md text-gray-600 hover:underline">
+      Muat Lebih Banyak
+    </button>
+  </div>
+</div>
+
 
       <!-- Modal -->
       <div 
