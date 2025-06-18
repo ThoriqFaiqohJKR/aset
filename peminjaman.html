@@ -1,0 +1,452 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  </script>
+  <title>
+    Dashboard
+  </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,100&display=swap');
+    p {
+  font-family: "Poppins", sans-serif;
+
+  font-style: normal;
+}
+    </style>
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+  ></script>
+
+
+</head>
+
+<body x-data="{ showModal: false }" @keydown.escape.window="showModal = false" class="flex flex-col min-h-screen">
+
+
+ <!--navbar-->
+ <div class="w-full sticky top-0 bg-white z-[99999999]">
+
+  <div class="bg-[#1a3a05] text-white text-xs font-semibold flex justify-end py-2 sm:pl-4 px-6 sm:px-[11.4rem]">
+      <a class="hover:underline" href="#">Buku terbaru</a>
+      <a class="hover:underline ml-9" href="#">Hubungi kami</a>
+    </div>
+
+    <header class="flex items-center  py-2 sm:px-[10.5rem]">
+      <!-- Kiri: Logo + Kategori -->
+      <div class="flex items-center gap-[9.9rem] flex-shrink-0 mr-[0.8rem]">
+        
+        <div class="w-24 h-16 lg:w-24 lg:h-16 sm:w-12 sm:h-12 flex items-center justify-center">
+          <img alt="Auriga company logo in gray background with white text, rectangular shape with stylized text Auriga Nusantara" class="sm:w-24 sm:h-12" height="64" src="image/Logo Auriga.png" width="96" />    
+
+        </div>
+
+      
+
+
+        <label
+          class="font-bold text-sm hidden sm:block cursor-pointer"
+          @click.prevent="showModal = !showModal">
+          Kategori
+        </label>
+      </div>
+
+      <!-- Kanan: Input + User Info -->
+      <div class="flex items-center justify-between w-full relative">
+        <!-- Input -->
+        <input
+          id="kategori"
+          type="text"
+          placeholder="Cari kategori..."
+          aria-label="Kategori"
+          class="border border-black text-sm py-1 px-2 w-full lg:mr-36 sm:mr-12 mr-6   max-w-full sm:max-w-none" />
+          <!--mr-4 sm:mr-12 rounded-sm focus:outline-none focus:ring-1 focus:ring-green-700"-->
+
+        <!-- User Info -->
+  <div 
+  x-data="{ dropdownOpen: false, isMobile: false }"
+  x-init="
+    isMobile = window.innerWidth < 640;
+    window.addEventListener('resize', () => {
+      isMobile = window.innerWidth < 640;
+      if (!isMobile) dropdownOpen = false; // reset dropdown saat pindah layar
+    });
+  "
+  @mouseenter="if(!isMobile) dropdownOpen = true"
+  @mouseleave="if(!isMobile) dropdownOpen = false"
+  @click="if(isMobile) dropdownOpen = !dropdownOpen"
+  @click.away="dropdownOpen = false"
+  class="relative flex items-center space-x-2 sm:space-x-2 flex-shrink-0 cursor-pointer select-none sm:mr-0 mr-3 sm:ml-0 ml-auto"
+>
+  <!-- Avatar -->
+  <img
+    alt="User avatar"
+    class="w-10 h-10 sm:w-10 sm:h-10 rounded-full border border-red-600 border-[3px] p-[2px] object-cover"
+    src="image/pp.jpeg"
+  />
+
+  <p class="font-bold text-sm sm:flex pr-3 hidden">
+    Hi,
+    <span>Pengguna</span>
+  </p>
+
+  <!-- Panah hanya untuk mobile -->
+  <p class="font-bold text-sm sm:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+      <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+    </svg>
+  </p>
+
+  <!-- Dropdown -->
+  <div
+    x-show="dropdownOpen"
+    @click.away="dropdownOpen = false"
+    class="absolute right-0 top-full mt-2 w-36 bg-white border border-gray-300 z-50 shadow-md"
+    x-transition
+  >
+   <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Home</a>
+<a href="buku.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Buku</a>
+<a href="peminjaman.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Peminjaman</a>
+<a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Aset</a>
+<a href="home.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Logout</a>
+
+
+   
+
+
+  </div>
+</div>
+
+      </div>
+    </header>
+
+
+    <!-- Navigation -->
+    <div class="flex justify-center">
+      <header
+
+        class="flex hidden sm:flex justify-center -translate-y-6">
+        <nav class="flex justify-center gap-[1.6rem] text-[13px] text-black w-full">
+          <a class="hover:underline" href="#">Hutan</a>
+          <a class="hover:underline" href="#">Kebun</a>
+          <a class="hover:underline" href="#">Tambang dan Energi</a>
+          <a class="hover:underline" href="#">Hukum</a>
+          <a class="hover:underline" href="#">Novel</a>
+          <a class="hover:underline" href="#">Lainnya</a>
+        </nav>
+      </header>
+    </div>
+
+    <div class="border-b border-red-500 -mt-3"></div>
+  </div>
+
+  <!-- Modal -->
+  <div
+    x-show="showModal"
+    x-transition
+    x-cloak
+    @click.self="showModal = false"
+    class="fixed inset-0  z-[199999999] pl-119 mt-2 pr-113 flex items-start justify-start pt-21">
+    <div class="bg-white border border-gray-300 shadow-lg w-full max-w-7xl py-8 px-8 mx-4">
+      <div class="flex flex-col space-y-8 mb-2">
+        <div>
+          <p class="font-bold text-sm leading-tight ">Hukum</p>
+          
+        </div>
+        <div>
+          <p class="font-bold text-sm leading-tight ">Hutan</p>
+          
+        </div>
+        <div>
+          <p class="font-bold text-sm leading-tight ">Kebun</p>
+          
+        </div>
+        <div>
+          <p class="font-bold text-sm leading-tight ">Tambang dan Energi</p>
+          
+        </div>
+        <div>
+          <p class="font-bold text-sm leading-tight">Novel</p>
+          
+        </div>
+        <div>
+          <p class="font-bold text-sm leading-tight ">Lainnya</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<!--navbar-->
+
+<!-- Main Content -->
+ <!-- Kartu Riwayat Peminjaman (versi statis/HTML murni) -->
+<div class="bg-white py-6 font-sans px-6 sm:px-48">
+  <!-- satu kartu -->
+  <div class="border border-gray-200 p-4 shadow-sm flex flex-col space-y-4 text-[14px] leading-tight">
+    <!-- Baris status + tanggal -->
+    <div class="flex flex-wrap items-center space-x-2 font-semibold text-gray-900">
+      <i class="fas fa-shopping-bag text-lg"></i>
+      <span>Dipinjam</span>
+      <span class="text-gray-700 font-normal">12 Mar 2024</span>
+      <span class="bg-blue-400 text-white font-semibold text-[10px] px-2 py-[2px]">
+        Dipinjam
+      </span>
+      <span class="text-gray-600 font-normal break-all ml-2">
+        Buku
+      </span>
+    </div>
+
+    <!-- Icon Jenis -->
+    <div class="flex items-center space-x-2 font-semibold text-gray-900 text-[14px]">
+      <i class="fas fa-book text-green-700"></i>
+      <span>Buku</span>
+    </div>
+
+    <!-- Detail Barang -->
+    <div class="flex justify-between items-center flex-wrap">
+      <div class="flex items-center space-x-3 flex-1 min-w-0">
+        <img src="image/buku2.jpg" alt="gambar"
+             class="w-[60px] h-[60px] object-contain flex-shrink-0" />
+        <div class="min-w-0">
+          <h3 class="font-bold text-[14px] truncate max-w-[480px]">
+            Pariwisata Alam Indonesia 55 Taman Nasional Indonesia
+          </h3>
+         
+        </div>
+      </div>
+
+      <!-- Total -->
+    </div>
+
+    <!-- Tombol detail -->
+    <div class="flex justify-end items-center space-x-3">
+      <a href="#"
+         class="text-green-700 font-semibold text-[13px] hover:underline">
+        Lihat Detail Transaksi
+      </a>
+    </div>
+
+    <!-- Timeline status -->
+    <div class="status-menu mt-2 border border-gray-300 bg-white shadow-md p-3 flex items-center justify-between text-sm text-gray-800">
+      <!-- Request -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-green-600 font-semibold">
+        <i class="fas fa-file-alt text-xl mb-1"></i>
+        <span class="text-xs text-center">Request</span>
+      </div>
+      <div class="flex-1 h-0.5 bg-green-600 mx-2"></div>
+
+      <!-- Silahkan di Ambil -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-green-600 font-semibold">
+        <i class="fas fa-hand-paper text-xl mb-1"></i>
+        <span class="text-xs text-center">Silahkan di Ambil</span>
+      </div>
+      <div class="flex-1 h-0.5 bg-green-600 mx-2"></div>
+
+      <!-- Dipinjam (current) -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-green-600 font-semibold">
+        <i class="fas fa-box-open text-xl mb-1"></i>
+        <span class="text-xs text-center">Dipinjam</span>
+      </div>
+      <div class="flex-1 h-0.5 bg-gray-300 mx-2"></div>
+
+      <!-- Kembali (belum tercapai) -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-gray-400 font-semibold">
+        <i class="fas fa-undo-alt text-xl mb-1"></i>
+        <span class="text-xs text-center">Kembali</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Kartu Riwayat Peminjaman (versi statis/HTML murni) -->
+<div class="bg-white py-6 font-sans px-6 sm:px-48">
+  <!-- satu kartu -->
+  <div class="border border-gray-200 p-4 shadow-sm flex flex-col space-y-4 text-[14px] leading-tight">
+    <!-- Baris status + tanggal -->
+    <div class="flex flex-wrap items-center space-x-2 font-semibold text-gray-900">
+      <i class="fas fa-shopping-bag text-lg"></i>
+      <span>Dipinjam</span>
+      <span class="text-gray-700 font-normal">12 Mar 2024</span>
+      <span class="bg-blue-400 text-white font-semibold text-[10px] px-2 py-[2px]">
+   Request
+      </span>
+      <span class="text-gray-600 font-normal break-all ml-2">
+        Buku
+      </span>
+    </div>
+
+    <!-- Icon Jenis -->
+    <div class="flex items-center space-x-2 font-semibold text-gray-900 text-[14px]">
+      <i class="fas fa-book text-green-700"></i>
+      <span>Buku</span>
+    </div>
+
+    <!-- Detail Barang -->
+    <div class="flex justify-between items-center flex-wrap">
+      <div class="flex items-center space-x-3 flex-1 min-w-0">
+        <img src="image/buku_detail.png" alt="gambar"
+             class="w-[60px] h-[60px] object-contain flex-shrink-0" />
+        <div class="min-w-0">
+          <h3 class="font-bold text-[14px] truncate max-w-[280px]">
+            Buku Ajar Biologi Hutan
+          </h3>
+         
+        </div>
+      </div>
+
+      <!-- Total -->
+    </div>
+
+    <!-- Tombol detail -->
+    <div class="flex justify-end items-center space-x-3">
+      <a href="#"
+         class="text-green-700 font-semibold text-[13px] hover:underline">
+        Lihat Detail Transaksi
+      </a>
+    </div>
+
+    <!-- Timeline status -->
+    <div class="status-menu mt-2 border border-gray-300 bg-white shadow-md p-3 flex items-center justify-between text-sm text-gray-800">
+      <!-- Request -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-green-600 font-semibold">
+        <i class="fas fa-file-alt text-xl mb-1"></i>
+        <span class="text-xs text-center">Request</span>
+      </div>
+      <div class="flex-1 h-0.5 bg-green-600 mx-2"></div>
+
+      <!-- Silahkan di Ambil -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-green-600 font-semibold">
+        <i class="fas fa-hand-paper text-xl mb-1"></i>
+        <span class="text-xs text-center">Silahkan di Ambil</span>
+      </div>
+      <div class="flex-1 h-0.5 bg-gray-300 mx-2"></div>
+
+      <!-- Dipinjam (current) -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-gray-400 font-semibold">
+        <i class="fas fa-box-open text-xl mb-1"></i>
+        <span class="text-xs text-center">Dipinjam</span>
+      </div>
+      <div class="flex-1 h-0.5 bg-gray-300 mx-2"></div>
+
+      <!-- Kembali (belum tercapai) -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-gray-400 font-semibold">
+        <i class="fas fa-undo-alt text-xl mb-1"></i>
+        <span class="text-xs text-center">Kembali</span>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- Kartu Riwayat Peminjaman (versi statis/HTML murni) -->
+<div class="bg-white py-6 font-sans px-6 sm:px-48">
+  <!-- satu kartu -->
+  <div class="border border-gray-200 p-4 shadow-sm flex flex-col space-y-4 text-[14px] leading-tight">
+    <!-- Baris status + tanggal -->
+    <div class="flex flex-wrap items-center space-x-2 font-semibold text-gray-900">
+      <i class="fas fa-shopping-bag text-lg"></i>
+      <span>Dipinjam</span>
+      <span class="text-gray-700 font-normal">12 Mar 2024</span>
+      <span class="bg-green-400 text-white font-semibold text-[10px] px-2 py-[2px]">
+        Kembali
+      </span>
+      <span class="text-gray-600 font-normal break-all ml-2">
+        Buku
+      </span>
+    </div>
+
+    <!-- Icon Jenis -->
+    <div class="flex items-center space-x-2 font-semibold text-gray-900 text-[14px]">
+      <i class="fas fa-book text-green-700"></i>
+      <span>Buku</span>
+    </div>
+
+    <!-- Detail Barang -->
+    <div class="flex justify-between items-center flex-wrap">
+      <div class="flex items-center space-x-3 flex-1 min-w-0">
+        <img src="image/buku1.jpg" alt="gambar"
+             class="w-[60px] h-[60px] object-contain flex-shrink-0" />
+        <div class="min-w-0">
+          <h3 class="font-bold text-[14px] truncate max-w-[280px]">
+            Signal
+          </h3>
+         
+        </div>
+      </div>
+
+      <!-- Total -->
+    </div>
+
+    <!-- Tombol detail -->
+    <div class="flex justify-end items-center space-x-3">
+      <a href="#"
+         class="text-green-700 font-semibold text-[13px] hover:underline">
+        Lihat Detail Transaksi
+      </a>
+    </div>
+
+    <!-- Timeline status -->
+    <div class="status-menu mt-2 border border-gray-300 bg-white shadow-md p-3 flex items-center justify-between text-sm text-gray-800">
+      <!-- Request -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-green-600 font-semibold">
+        <i class="fas fa-file-alt text-xl mb-1"></i>
+        <span class="text-xs text-center">Request</span>
+      </div>
+      <div class="flex-1 h-0.5 bg-green-600 mx-2"></div>
+
+      <!-- Silahkan di Ambil -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-green-600 font-semibold">
+        <i class="fas fa-hand-paper text-xl mb-1"></i>
+        <span class="text-xs text-center">Silahkan di Ambil</span>
+      </div>
+      <div class="flex-1 h-0.5 bg-green-600 mx-2"></div>
+
+      <!-- Dipinjam (current) -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-green-600 font-semibold">
+        <i class="fas fa-box-open text-xl mb-1"></i>
+        <span class="text-xs text-center">Dipinjam</span>
+      </div>
+      <div class="flex-1 h-0.5 bg-green-600 mx-2"></div>
+
+      <!-- Kembali (belum tercapai) -->
+      <div class="flex flex-col items-center justify-center w-14 h-14 text-green-600 font-semibold">
+        <i class="fas fa-undo-alt text-xl mb-1"></i>
+        <span class="text-xs text-center">Kembali</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--footer-->
+<footer class="border-t border-red-600 mt-auto bg-white poppins-regular">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center lg:px-44 px-2 py-4 border-b-2 border-black">
+      <div class="mx-auto sm:mx-0 lg:mt-0 sm:w-auto">
+        <img alt="Auriga company logo in gray background with white text, rectangular shape with stylized text Auriga Nusantara" class="sm:w-24 sm:h-12" height="64" src="image/Logo Auriga.png" width="96" />
+      </div>
+<div class="grid grid-cols-2 sm:flex flex-wrap sm:gap-x-24 gap-x-6 gap-y-2 text-xs text-black px-4 sm:px-12 lg:px-36 w-full justify-start mt-4 text-left">
+  <p class="font-semibold">Hutan</p>
+  <p class="font-semibold">Kebun</p>
+  <p class="font-semibold">Tambang dan Energi</p>
+  <p class="font-semibold">Hukum</p>
+  <p class="font-semibold">Novel</p>
+  <p class="font-semibold">Lainnya</p>
+</div>
+
+
+      
+    </div>
+    <div class="max-w-7xl mx-auto px-6 sm:px-36 pb-1 text-center text-[12.5px] text-black select-none">
+      COPYRIGHT © 2025 AURIGA NUSANTARA. ALL RIGHTS RESERVED.
+    </div>
+    <div class="bg-[#1a3a05] text-white text-xs font-semibold flex justify-end px-6 sm:px-36 py-2">
+    </div>
+  </footer>
+
+  </body>
+
+</html>
+
+
