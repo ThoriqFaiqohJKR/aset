@@ -107,10 +107,9 @@
     class="absolute right-0 top-full mt-2 w-36 bg-white border border-gray-300 z-50 shadow-md"
     x-transition
   >
-   <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Home</a>
-<a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Buku</a>
-<a href="peminjaman.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Peminjaman</a>
-<a href="aset" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Aset</a>
+<a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Aset</a>
+<a href="peminjaman.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Buku</a>
+<a href="aset" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Riwayat</a>
 <a href="home.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-black hover:text-white">Logout</a>
 
 
@@ -290,136 +289,141 @@
                 x-ref="carousel"
                 class="overflow-x-auto scroll-smooth whitespace-nowrap flex gap-2 sm:gap-11 hide-scrollbar py-1">
                 
+<a href="buku-detail.html"
+   class="w-48 h-48 border border-gray-300 flex-shrink-0 bg-white border-gray-700 shadow-sm flex flex-col overflow-hidden hover:shadow-md hover:border-gray-400 transition-transform duration-200 transform hover:scale-105">
+
+    <!-- Judul (dibatasi max 3 baris) -->
+    <div class="p-2 h-[72px] overflow-hidden">
+        <p class="font-semibold text-xs break-words whitespace-normal leading-snug line-clamp-3">
+            Buku Tata Kelola Kolaboratif: Solusi Ketahanan Hutan di Indonesia
+        </p>
+    </div>
+
+    <!-- Gambar (tetap penuh sisanya) -->
+    <div class="flex-1 w-full flex items-start justify-center overflow-hidden bg-gray-100">
+        <img src="image/tata-kelola.png"
+             alt="Buku"
+             class="w-full h-full object-cover object-top" />
+    </div>
+</a>
+
+
                 <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
+   class="border border-gray-300 aspect-square w-48 flex-shrink-0 bg-white border-gray-700 shadow-sm h-48 flex flex-col transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
 
-                    <div class="bg-white border text-center font-semibold text-md py-2 w-[170px]">
-  Hutan
-</div>
-<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
-  <img src="image/buku2.jpg" alt="Buku"
-       class="max-w-full max-h-full object-contain" />
-</div>
+    <!-- Judul -->
+    <div class="p-2 min-h-[72px]">
+        <p class="font-semibold text-xs break-words whitespace-normal leading-snug">
+            Buku Tata Kelola Hutan Kota Sebagai Penyedia Layanan Ekosistem
+        </p>
+    </div>
 
+    <!-- Gambar -->
+    <div class="flex-1 bg-gray-600 w-full flex items-center justify-center overflow-hidden border border-red-600">
+        <img src="image/tata kelola hutan kota.jpg" alt="Buku"
+              class="w-full h-full object-cover object-top" />
+    </div>
+</a>
 
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Buku Ajar Biologi Hutan Bagian 1
-                            </p>
-                          
-                        </div>
-                        <div class="mt-4">
-                           
-                        </div>
-                    </div>
-                </a>
- <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
-  <img src="image/buku2.jpg" alt="Buku"
-       class="max-w-full max-h-full object-contain" />
-</div>
+<a href="buku-detail.html"
+  class="w-48 h-48 flex-shrink-0 bg-white border border-gray-300 shadow-sm
+          flex flex-col overflow-hidden hover:shadow-md hover:scale-105
+          transition-transform duration-200">
 
+    <!-- Judul -->
+    <div class="p-2 min-h-[72px]">
+        <p class="font-semibold text-sm break-words whitespace-normal leading-snug">
+            Buku Hutan Mangrove dalam Perspektif Ekologi
+        </p>
+    </div>
 
+    <!-- Gambar -->
+    <div class="flex-1 w-full flex items-start justify-center overflow-hidden bg-gray-100 border border-red-600">
+        <img src="image/hutan mangrove.png"
+             alt="Buku"
+             class="w-full h-full object-cover object-bottom" />
+    </div>
+</a>
 
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Pariwisata Alam 54 Taman Nasioal Indonesia
-                            </p>
-                            
-                        </div>
-                    </div>
-                </a>
-                <a href="buku-detail copy.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-                       
-<!-- Label Kategori -->
+<a href="buku-detail.html"
+  class="w-48 h-48 flex-shrink-0 bg-white border border-gray-300 shadow-sm
+          flex flex-col overflow-hidden hover:shadow-md hover:scale-105
+          transition-transform duration-200">
 
+    <!-- Judul -->
+    <div class="p-2 min-h-[72px]">
+        <p class="font-semibold text-xs break-words whitespace-normal leading-snug">
+            Buku Hutan Kota Ruang Interaksi, Edukasi, dan Rekreasi Masyarakat Kota
+        </p>
+    </div>
 
-<!-- Gambar Buku dalam rasio A4 -->
-<div class="w-[170px] h-[240px] border border-gray-400 overflow-hidden bg-white flex items-center justify-center">
-  <img src="image/buku_detail.png" alt="Buku"
-       class="object-contain max-w-full max-h-full" />
-</div>
+    <!-- Gambar -->
+    <div class="flex-1 w-full flex items-start justify-center overflow-hidden bg-gray-100 border border-red-600">
+        <img src="image/hutan kotak edukasi.jpg"
+             alt="Buku"
+             class="w-full h-full object-cover object-center" />
+    </div>
+</a>
 
+<a href="buku-detail.html"
+  class="w-48 h-48 flex-shrink-0 bg-white border border-gray-300 shadow-sm
+          flex flex-col overflow-hidden hover:shadow-md hover:scale-105
+          transition-transform duration-200">
 
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Buku Ajar Biologi Hutan Bagian 2
-                            </p>
-                            
-                        </div>
-                    </div>
-                </a> 
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
-<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
-  <img src="image/buku2.jpg" alt="Buku"
-       class="max-w-full max-h-full object-contain" />
-</div>
+    <!-- Judul -->
+    <div class="p-2 min-h-[72px]">
+        <p class="font-semibold text-xs break-words whitespace-normal leading-snug">
+            Buku Kawasan Penyangga Suaka Margasatwa: Kondisi, Proyeksi, dan Keberlanjutan
+        </p>
+    </div>
 
+    <!-- Gambar -->
+    <div class="flex-1 w-full flex items-start justify-center overflow-hidden bg-gray-100 border border-red-600">
+        <img src="image/suaka marga.jpg"
+             alt="Buku"
+             class="w-full h-full object-cover object-top" />
+    </div>
+</a>
 
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Pariwisata Alam 54 Taman Nasioal Indonesia
-                            </p>
-                            
-                        </div>
-                    </div>
-                </a> 
-                <a href="buku-detail.html"
-                    class="border border-gray-300 w-48 flex-shrink-0 bg-whiteborder  border-gray-700 shadow-sm h-full flex flex-col items-center pt-4 transform transition-transform duration-200 hover:scale-100 hover:shadow-md hover:border-gray-400">
-                    <!-- Gambar kotak -->
- <div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
-  <img src="image/buku2.jpg" alt="Buku"
-       class="max-w-full max-h-full object-contain" />
-</div>
+<a href="buku-detail.html"
+  class="w-48 h-48 flex-shrink-0 bg-white border border-gray-300 shadow-sm
+          flex flex-col overflow-hidden hover:shadow-md hover:scale-105
+          transition-transform duration-200">
 
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Pariwisata Alam 54 Taman Nasioal Indonesia
-                            </p>
-                            
-                        </div>
-                    </div>
-                </a>
-                <a aria-disabled="true" 
-                class="pointer-events-none border border-gray-400 w-48 flex-shrink-0 bg-gray-200 shadow-sm h-full flex flex-col items-center pt-4 cursor-not-allowed select-none opacity-70" href="buku-detail.html" tabindex="-1">
-                    <!-- Gambar kotak -->
-<div class="w-[170px] h-[240px] bg-gray-300 flex items-center justify-center overflow-hidden border border-gray-400">
-  <img src="image/buku2.jpg" alt="Buku"
-       class="max-w-full max-h-full object-contain" />
-</div>
+    <!-- Judul -->
+    <div class="p-2 min-h-[72px]">
+        <p class="font-semibold text-xs break-words whitespace-normal leading-snug">
+            Buku Hutan Mangrove Dan Pemanfaatannya
+        </p>
+    </div>
 
+    <!-- Gambar -->
+    <div class="flex-1 w-full flex items-start justify-center overflow-hidden bg-gray-100 border border-red-600">
+        <img src="image/manfaat mangrove.jpg"
+             alt="Buku"
+             class="w-full h-full object-cover object-top" />
+    </div>
+</a>
 
-                    <!-- Judul dan Ringkasan -->
-                    <div class="pt-2 px-4 text-left w-full min-h-[120px] flex flex-col justify-start">
-                        <div>
-                            <p class="font-semibold text-sm break-words whitespace-normal">
-                                Pariwisata Alam 54 Taman Nasioal Indonesia
-                            </p>
-                            
-                        </div>
-                    </div>
-                </a>
-                
-            </div>
+<a href="buku-detail.html"
+  class="w-48 h-48 flex-shrink-0 bg-white border border-gray-300 shadow-sm
+          flex flex-col overflow-hidden hover:shadow-md hover:scale-105
+          transition-transform duration-200">
 
+    <!-- Judul -->
+    <div class="p-2 min-h-[72px]">
+        <p class="font-semibold text-xs break-words whitespace-normal leading-snug">
+            Buku Lahan Gambut dan Ketahanan Pangan di Indonesia
+        </p>
+    </div>
 
+    <!-- Gambar -->
+    <div class="flex-1 w-full flex items-start justify-center overflow-hidden bg-gray-100 border border-red-600">
+        <img src="image/ketahanan pangan.jpg"
+             alt="Buku"
+             class="w-full h-full object-cover object-top" />
+    </div>
+</a>
             <!-- Tombol Scroll Kanan -->
             <button
                 x-show="showRight"
@@ -461,7 +465,9 @@
 
 </div>
 
+
 <!--content Kebun-->
+
 
 <div class="bg-white mt-6 font-sans px-4 sm:px-6 md:px-12 lg:px-20 xl:px-48">
 
